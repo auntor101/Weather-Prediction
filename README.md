@@ -1,6 +1,6 @@
 Weather Prediction for Chittagong
 
-A machine learning-based weather prediction system designed to forecast weather conditions in Chittagong, Bangladesh, using historical meteorological data. The project applies advanced data preprocessing, hyperparameter tuning, and ensemble learning** to enhance prediction accuracy and generalization. A Flask web application with a structured Bootstrap UI allows users to input weather parameters and obtain real-time predictions.
+This machine learning-based weather prediction system uses historical meteorological data to forecast weather conditions in Chittagong, Bangladesh. The project applies advanced data preprocessing, hyperparameter tuning, and ensemble learning to enhance prediction accuracy and generalization. A Flask web application with a structured Bootstrap UI allows users to input weather parameters and obtain real-time predictions.
 
 Introduction
 
@@ -33,11 +33,13 @@ Flask Web Application
 Flask-based API: Processes user input and returns predictions.
 Bootstrap UI: A structured and responsive interface for efficient usage.
 Real-Time Prediction: Displays predicted weather conditions with confidence scores.
+
 Installation
 
 Step 1: Clone the Repository
 
-git clone https://github.com/your-username/weather_prediction_chittagong.git cd weather_prediction_chittagong
+git clone https://github.com/your-username/weather_prediction_chittagong.git 
+cd weather_prediction_chittagong
 
 Step 2: Create and Activate a Virtual Environment
 python -m venv venv source venv/bin/activate
