@@ -1,3 +1,8 @@
+This Project is supervised By  
+**Md Mynoddin Sir,  
+Assistant Professor,  
+Department of CSE, RMSTU.**
+
 # **Weather Prediction for Chittagong**  
 
 A machine learning-based **weather prediction system** designed to forecast weather conditions in **Chittagong, Bangladesh** using historical meteorological data. The project applies **advanced data preprocessing, hyperparameter tuning, and ensemble learning** to enhance prediction accuracy and generalization. A **Flask web application** with a structured **Bootstrap UI** allows users to input weather parameters and obtain real-time predictions.
@@ -181,4 +186,6 @@ During training, performance metrics and visualizations are **displayed and logg
   - Incorporate live weather data for **real-time forecasts and comparisons**.  
 
 - **Automated Model Retraining**  
-  - Develop **continuous learning pipelines** for periodic retraining with updated datasets.  
+  - Develop **continuous learning pipelines** for periodic retraining with updated datasets.
+
+
