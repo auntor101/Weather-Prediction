@@ -1,7 +1,4 @@
-This Project is supervised By  
-**Md Mynoddin Sir,  
-Assistant Professor,  
-Department of CSE, RMSTU.**
+
 
 # **Weather Prediction for Chittagong**  
 
