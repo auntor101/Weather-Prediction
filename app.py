@@ -76,9 +76,12 @@ def predict():
 
         return render_template('index.html', prediction_text=f'Predicted Weather: {predicted_label}')
 
+    except ValueError as ve:
+        logging.error(f"Validation error: {ve}")
+        return render_template('index.html', prediction_text=f'<span style="color: #d9534f; font-weight: 500;">Input error: {str(ve)}</span>')
     except Exception as e:
         logging.error(f"Error in prediction: {e}")
-        return render_template('index.html', prediction_text=f'Error: {e}')
+        return render_template('index.html', prediction_text=f'<span style="color: #d9534f; font-weight: 500;">Sorry, there was an error: {str(e)}. Please check your inputs and try again.</span>')
 
 # API endpoint for JSON requests
 @app.route('/api/predict', methods=['POST'])
@@ -103,11 +106,23 @@ def api_predict():
         prediction = model.predict(input_scaled)
         predicted_label = weather_label_map.get(prediction[0], "Unknown")
 
-        return jsonify({'prediction': predicted_label})
+        return jsonify({'prediction': predicted_label, 'status': 'success'})
 
+    except ValueError as ve:
+        logging.error(f"Validation error: {ve}")
+        return jsonify({'error': str(ve), 'status': 'input_error'}), 400
     except Exception as e:
         logging.error(f"Error in API prediction: {e}")
-        return jsonify({'error': str(e)})
+        return jsonify({'error': str(e), 'status': 'error'}), 500
+
+# Centralized error handlers
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('index.html', prediction_text='<span style="color: #d9534f; font-weight: 500;">Page not found (404). Please check the URL.</span>'), 404
+
+@app.errorhandler(500)
+def internal_error(error):
+    return render_template('index.html', prediction_text='<span style="color: #d9534f; font-weight: 500;">Internal server error (500). Please try again later.</span>'), 500
 
 # Run the app
 if __name__ == '__main__':
